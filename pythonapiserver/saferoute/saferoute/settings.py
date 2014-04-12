@@ -57,6 +57,13 @@ WSGI_APPLICATION = 'saferoute.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'saferoutedb',                      
+        'USER': 'saferoute',
+        'PASSWORD': 'saferoute',
+        'HOST': 'saferoutedbinstance.c5swh5ums3iw.us-west-2.rds.amazonaws.com:5432'
+    }
+    'local': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
