@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'routefinder',
+    'incidentapi',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,18 +53,18 @@ ROOT_URLCONF = 'saferoute.urls'
 
 WSGI_APPLICATION = 'saferoute.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django_mongodb_engine',
         'NAME': 'saferoutedb',                      
         'USER': 'saferoute',
         'PASSWORD': 'saferoute',
-        'HOST': 'saferoutedbinstance.c5swh5ums3iw.us-west-2.rds.amazonaws.com:5432'
-    }
+        'HOST': 'ds041347.mongolab.com',
+        'PORT': 41347
+    },
     'local': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
@@ -87,3 +89,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# My settings
+# 
+APPEND_SLASH = False
