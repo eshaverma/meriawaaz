@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'routefinder',
     'incidentapi',
+    'scraper',
 )
 
 MIDDLEWARE_CLASSES = (
